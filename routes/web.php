@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::view('/order-coffee', 'order')->name('order');
+
+Route::view('/contact', 'contact')->name('contact');

@@ -1,0 +1,40 @@
+.contact-page{max-width:1200px;margin:0 auto;padding:65px 35px 85px;color:#eee5dc}
+.contact-page .contact-intro{max-width:720px;margin:0 auto 55px;text-align:center}
+.contact-page .contact-eyebrow{color:#d5ad86;font-size:10px;font-weight:600;letter-spacing:2.5px;margin-bottom:18px}
+.contact-page h1{font-size:clamp(34px,4.8vw,58px);font-weight:500;line-height:1.2;letter-spacing:-1.6px;margin:0 0 22px}
+.contact-page h1 span{color:#d5ad86}
+.contact-page .contact-intro>p:last-child{color:#b4a89e;font-size:13px;line-height:1.9;max-width:540px;margin:auto}
+.contact-page .contact-grid{display:grid;grid-template-columns:.85fr 1.3fr;gap:28px;align-items:stretch}
+.contact-page .contact-details{padding:35px 30px;border:1px solid #514033;border-radius:18px;background:linear-gradient(145deg,#34271e,#1c1713)}
+.contact-page h2{font-size:25px;font-weight:500;line-height:1.4;margin:0 0 16px;letter-spacing:-.6px}
+.contact-page .contact-details>p:not(.contact-eyebrow){font-size:12px;color:#b8a99a;line-height:1.9}
+.contact-page .contact-detail{display:flex;gap:18px;padding:24px 0;border-bottom:1px solid #4a3a2d}
+.contact-page .contact-detail>span{font-size:10px;color:#c8a47e;padding-top:3px}
+.contact-page .contact-detail h3{font-size:12px;font-weight:500;color:#ede2d5;margin:0 0 8px}
+.contact-page .contact-detail p,.contact-page .contact-detail a{font-size:12px;color:#c4b5a5;line-height:1.8;text-decoration:none}
+.contact-page .contact-detail a{color:#e0b98f}
+.contact-page .contact-detail small{font-size:9px;color:#aa9785;display:block;margin-top:5px}
+.contact-page .contact-footnote{margin-top:35px}
+.contact-page .contact-form-panel{background:#f7f3ed;color:#35291f;border:1px solid #d5c9bb;border-radius:18px;padding:35px}
+.contact-page .contact-form-panel h2 span{color:#a37b53}
+.contact-page .contact-form-intro{font-size:11px;color:#7d6e60;margin-bottom:25px}
+.contact-page .contact-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-page .contact-field{margin-bottom:18px}
+.contact-page .contact-field label{display:block;font-size:11px;font-weight:500;margin:0 0 8px}
+.contact-page input,.contact-page textarea{display:block;width:100%;min-width:0;padding:13px;border:1px solid #d6cbbb;border-radius:7px;background:#fffdf9;color:#35291f;font:12px 'Poppins',Arial,sans-serif;line-height:1.7}
+.contact-page textarea{resize:vertical;min-height:145px}
+.contact-page input::placeholder,.contact-page textarea::placeholder{color:#a5998b}
+.contact-page input:focus,.contact-page textarea:focus{outline:2px solid #a37b53;outline-offset:2px}
+.contact-page [aria-invalid="true"]{border-color:#b43b32}
+.contact-page .contact-error{min-height:0;font-size:10px;color:#a92e27;margin:6px 0 0;line-height:1.6}
+.contact-page .contact-error:empty{display:none}
+.contact-page .contact-submit{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 18px;background:#34281f;color:#fff4e6;border:0;border-radius:7px;font:500 12px 'Poppins',Arial,sans-serif;cursor:pointer}
+.contact-page .contact-submit:hover{background:#56402d}
+.contact-page .contact-submit:disabled{opacity:.5;cursor:not-allowed}
+.contact-page button:focus-visible,.contact-page a:focus-visible{outline:3px solid #ad845c;outline-offset:4px}
+.contact-page .contact-demo{font-size:9px;line-height:1.9;color:#8a7967;margin-top:13px}
+.contact-page .contact-status,.contact-page .contact-notice{font-size:12px;line-height:1.8;padding:15px;margin-top:20px;background:#e3ebdd;border:1px solid #b9c8ac;border-radius:7px;color:#354c2e}
+.contact-page .contact-status[data-state="error"]{background:#f6e8e2;border-color:#d7b0a3;color:#8d3326}
+.contact-page [hidden]{display:none!important}
+@media(max-width:850px){.contact-page{padding:40px 22px 60px}.contact-page .contact-grid{grid-template-columns:1fr}.contact-page .contact-intro{margin-bottom:35px}.contact-page .contact-details{padding:28px}.contact-page .contact-detail{padding:17px 0}.contact-page .contact-footnote{margin-top:20px}}
+@media(max-width:480px){.contact-page .contact-fields-row{grid-template-columns:1fr;gap:0}.contact-page .contact-form-panel{padding:25px 20px}.contact-page h2{font-size:23px}}
