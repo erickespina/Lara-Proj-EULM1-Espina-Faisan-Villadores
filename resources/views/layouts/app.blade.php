@@ -33,6 +33,7 @@
     </div>
 
     <nav class="nav-links">
+        <a href="{{ request()->routeIs('order') ? '#coffee-menu' : route('order') . '#coffee-menu' }}">Order Coffee</a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="#products">Our Product</a>
