@@ -144,11 +144,6 @@
                     <span>★★★★★</span>
                     <span class="product-price">₱99</span>
                 </div>
-                <div class="order-call-to-action">
-                    <h2>Found Your Favorite?</h2>
-                        <p>Choose your favorite drinks and place your order.</p>
-                    <a href="/order" class="primary-btn">Order Now ☕</a>
-                </div>
             </div>
         </div>
 
