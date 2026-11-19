@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const orderPage = document.querySelector('.order-page');
+    const navbar = document.querySelector('.navbar');
+    if (orderPage && navbar) {
+        const updateOffset = () => {
+            orderPage.style.setProperty('--order-sticky-offset', `${navbar.getBoundingClientRect().height + 16}px`);
+        };
+        updateOffset();
+        if ('ResizeObserver' in window) new ResizeObserver(updateOffset).observe(navbar);
+        else window.addEventListener('resize', updateOffset);
+    }
     const cart = new Map();
     const items = document.getElementById('order-items');
     const status = document.getElementById('order-status');
