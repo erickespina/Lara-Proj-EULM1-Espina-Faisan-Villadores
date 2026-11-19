@@ -17,6 +17,7 @@
     <section class="order-area" id="coffee-menu">
         <div class="menu-section"><div class="section-heading"><div><p class="eyebrow">PICK YOUR PERFECT CUP</p><h2>Our coffee menu<span>.</span></h2></div><span class="menu-count">6 house favorites</span></div>
             <p class="menu-description">Select a size and temperature, then add your coffee to the order.</p>
+            <div class="coffee-search-feedback"><p id="coffee-search-status" role="status" aria-live="polite" aria-atomic="true">6 coffees to explore. Use the search bar above to find a favorite.</p><button id="coffee-search-clear" type="button" hidden>Clear search</button></div>
             <noscript><p class="notice">Please enable JavaScript to customize coffees and build your order.</p></noscript>
             <div class="coffee-grid">
                 @foreach ([
@@ -36,6 +37,7 @@
                     </article>
                 @endforeach
             </div>
+            <div id="coffee-search-empty" hidden><h3>No coffees found.</h3><p>Try a coffee name or ingredient, such as latte, caramel, or chocolate.</p></div>
         </div>
         <aside class="order-panel" aria-label="Your order"><div class="panel-top"><span class="eyebrow">A LITTLE SOMETHING FOR YOU</span><h2>Your order <span id="item-count">0</span></h2></div><div id="order-items"><div class="empty-order"><span aria-hidden="true">☕</span><h3>Your cup is waiting.</h3><p>Add a coffee from the menu<br>to start your order.</p></div></div><div class="order-totals"><div><span>Subtotal</span><strong id="subtotal">₱0.00</strong></div><p>Listed prices are final. No additional fees.</p><div class="total-line"><span>Total</span><strong id="total">₱0.00</strong></div></div><button id="place-order" class="checkout-button" type="button" disabled>Place order <span>↗</span></button><p class="demo-note">Demo ordering only · No payment collected</p><p id="order-status" class="order-status" role="status" aria-live="polite"></p></aside>
     </section>
@@ -45,4 +47,5 @@
 
 @push('scripts')
     <script src="{{ asset('js/order.js') }}" defer></script>
+    <script src="{{ asset('js/search.js') }}" defer></script>
 @endpush
