@@ -8,16 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         readMoreBtn.addEventListener("click", function () {
 
-            if (extraStory.hidden) {
+            const isHidden = extraStory.hidden;
 
-                extraStory.hidden = false;
+            extraStory.hidden = !isHidden;
+
+            if (isHidden) {
                 readMoreBtn.textContent = "Read Less −";
-
             } else {
-
-                extraStory.hidden = true;
                 readMoreBtn.textContent = "Read More +";
-
             }
 
         });
