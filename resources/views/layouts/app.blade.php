@@ -25,14 +25,16 @@
 
         <a href="/" class="logo">☕ ShizuKafe<span>.brew</span></a>
 
-        <div class="search-box">
+        <form class="search-box" role="search" action="{{ route('order') }}#coffee-menu" method="GET">
             <span>⌕</span>
-            <input type="text" placeholder="Search coffee..." id="coffeeSearch">
-        </div>
+            <input type="search" name="q" placeholder="Search coffee..." id="coffeeSearch" aria-label="Search coffees" value="{{ request('q', '') }}" maxlength="100">
+        </form>
 
     </div>
 
     <nav class="nav-links">
+        <a href="{{ route('contact') }}">Contact Us</a>
+        <a href="{{ request()->routeIs('order') ? '#coffee-menu' : route('order') . '#coffee-menu' }}">Order Coffee</a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="#products">Our Product</a>

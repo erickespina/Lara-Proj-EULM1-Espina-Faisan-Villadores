@@ -1,15 +1,13 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::view('/category', 'category')->name('category');
+Route::view('/explore', 'explore')->name('explore');
+Route::view('/order-coffee', 'order')->name('order');
+Route::view('/contact', 'contact')->name('contact');
 
-Route::get('/category', function () {
-    return view('category');
-});
-Route::get('/explore', function () {
-    return view('explore');
-});
+Route::redirect('/products', '/category');
+Route::redirect('/order', '/order-coffee');
