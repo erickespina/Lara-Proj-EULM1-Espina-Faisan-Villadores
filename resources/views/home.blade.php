@@ -3,6 +3,10 @@
 
 @section('title', 'Home | ShizuKafe.brew')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+@endpush
+
 @section('content')
 
 <section class="hero">
@@ -29,16 +33,31 @@
 
     </div>
 
-    <div class="hero-image">
-        <img
-            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900"
-            alt="Freshly brewed coffee"
-        >
-
+    <div class="hero-image home-carousel" role="region" aria-roledescription="carousel" aria-label="Featured drinks">
+        <div class="home-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900" alt="Freshly brewed coffee" fetchpriority="high">
+        </div>
+        <div class="home-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" hidden>
+            <img src="{{ asset('images/products/iced-caramel-macchiato.png') }}" alt="Iced caramel macchiato" loading="lazy">
+        </div>
+        <div class="home-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" hidden>
+            <img src="{{ asset('images/products/don-matchatos.png') }}" alt="Don Matchatos matcha drink" loading="lazy">
+        </div>
         <div class="rating-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <small>4.9 out of 5 overall star<br>rating for our local cafe</small>
         </div>
+        <div class="home-carousel-controls" hidden>
+            <button type="button" data-direction="-1" aria-label="Previous drink">&#8592;</button>
+            <div class="home-carousel-dots" aria-label="Choose a featured drink">
+                <button type="button" data-slide="0" aria-label="Show drink 1" aria-current="true"></button>
+                <button type="button" data-slide="1" aria-label="Show drink 2"></button>
+                <button type="button" data-slide="2" aria-label="Show drink 3"></button>
+            </div>
+            <button type="button" data-direction="1" aria-label="Next drink">&#8594;</button>
+            <button type="button" class="home-carousel-pause">Pause</button>
+        </div>
+        <p class="home-carousel-status" aria-live="polite" aria-atomic="true"></p>
     </div>
 
 </section>
@@ -88,3 +107,7 @@
 </section>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/home.js') }}" defer></script>
+@endpush
