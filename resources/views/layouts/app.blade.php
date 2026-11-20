@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,31 +16,27 @@
 
     <div class="website-container">
 
-       
+        <header class="navbar">
 
-<header class="navbar">
+            <div class="navbar-left">
 
-    <div class="navbar-left">
+                <a href="/" class="logo">☕ ShizuKafe<span>.brew</span></a>
 
-        <a href="/" class="logo">☕ ShizuKafe<span>.brew</span></a>
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="text" placeholder="Search coffee..." id="coffeeSearch">
+                </div>
 
-        <div class="search-box">
-            <span>⌕</span>
-            <input type="text" placeholder="Search coffee..." id="coffeeSearch">
-        </div>
+            </div>
 
-    </div>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/products">Our Product</a>
+                <a href="/products#categories">Category</a>
+            </nav>
 
-    <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="#products">Our Product</a>
-        <a href="#category">Category</a>
-    </nav>
-
-</header>
-
-
+        </header>
 
         <main>
             @yield('content')
@@ -58,6 +53,15 @@
                     <h3>Contact Us</h3>
                     <p>Have questions or want to order coffee?</p>
                     <a href="/contact">Get in Touch ↗</a>
+                </div>
+
+                <div class="member-list">
+                    <h3>Member List:</h3>
+                    <p>
+                        Erick Espina<br>
+                        Joseph Faisan<br>
+                        Rodel Villadores
+                    </p>
                 </div>
             </div>
 
