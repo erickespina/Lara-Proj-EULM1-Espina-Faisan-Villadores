@@ -1,0 +1,14 @@
+/* Home-only carousel styles. */
+.home-carousel .home-slide[hidden],
+.home-carousel .home-carousel-controls[hidden] { display: none; }
+.home-carousel .home-slide img { display: block; }
+.home-carousel-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
+.home-carousel-controls button { border: 1px solid #80654e; background: #211b17; color: #f5e6d8; border-radius: 6px; min-width: 36px; min-height: 36px; cursor: pointer; font: inherit; }
+.home-carousel-controls button:hover { background: #493426; }
+.home-carousel-controls button:focus-visible { outline: 3px solid #e7b98c; outline-offset: 3px; }
+.home-carousel-dots { display: flex; align-items: center; gap: 6px; }
+.home-carousel-dots button { position: relative; width: 28px; min-width: 28px; border: none; background: transparent; }
+.home-carousel-dots button::before { content: ''; display: block; width: 8px; height: 8px; margin: auto; border-radius: 50%; background: #786451; }
+.home-carousel-dots button[aria-current="true"]::before { background: #e7b98c; }
+.home-carousel-controls .home-carousel-pause { padding: 0 10px; font-size: 12px; }
+.home-carousel-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
