@@ -1,0 +1,163 @@
+.explore-hero {
+    text-align: center;
+    padding: 60px 9% 20px;
+}
+
+.explore-hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 12px;
+}
+
+.explore-hero h1 span { color: #d5ad86; }
+
+.explore-description { color: #aaa29b; font-size: 15px; }
+
+.explore-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 5%;
+}
+
+.explore-section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+
+.explore-section h2 span { color: #d5ad86; }
+
+/* FIND YOUR DRINK */
+.finder-box {
+    background: #211b17;
+    border: 1px solid #44372e;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.q-label {
+    color: #d9ad82;
+    font-size: 14px;
+    margin: 14px 0 10px;
+}
+
+.q-label:first-child { margin-top: 0; }
+
+.option-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.option-btn {
+    background: transparent;
+    color: #c6c0bb;
+    border: 1px solid #77716c;
+    padding: 9px 20px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option-btn:hover { border-color: #d5ad86; color: #d5ad86; }
+
+.option-btn.selected {
+    background: #a9774c;
+    border-color: #a9774c;
+    color: #fff;
+}
+
+#findBtn {
+    margin-top: 22px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.finder-error { color: #e0907a; font-size: 13px; margin-top: 12px; }
+
+/* RESULT CARD (used by the quiz and Drink of the Day) */
+.drink-result {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: #211b17;
+    border: 1px solid #b1845d;
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 22px;
+}
+
+.drink-result[hidden] { display: none; }
+
+.dr-img {
+    width: 42%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dr-text { flex: 1; }
+
+.tag {
+    color: #d5a16f;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dr-name { font-size: 26px; margin: 8px 0; }
+
+.dr-desc { color: #aaa29b; font-size: 14px; line-height: 1.7; }
+
+.price {
+    display: inline-block;
+    margin-top: 12px;
+    color: #d9ad82;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.center-row { text-align: center; margin-top: 22px; }
+
+#surpriseBtn { background: transparent; cursor: pointer; font-family: 'Poppins', sans-serif; }
+
+/* COFFEE GUIDE */
+.guide { display: flex; flex-direction: column; gap: 12px; }
+
+.guide-item {
+    background: #211b17;
+    border: 1px solid #44372e;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.guide-q {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 16px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guide-q::after { content: '+'; color: #d5ad86; font-size: 22px; }
+.guide-q[aria-expanded="true"]::after { content: '−'; }
+.guide-q:hover { color: #d5ad86; }
+
+.guide-a {
+    padding: 0 20px 18px;
+    color: #aaa29b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.guide-a[hidden] { display: none; }
+
+@media (max-width: 700px) {
+    .drink-result { flex-direction: column; }
+    .dr-img { width: 100%; height: 210px; }
+}
