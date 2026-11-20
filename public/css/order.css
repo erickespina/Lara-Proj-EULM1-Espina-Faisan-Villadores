@@ -14,3 +14,7 @@
 .order-page .order-panel{top:var(--order-sticky-offset,116px);max-height:calc(100dvh - var(--order-sticky-offset,116px) - 16px);overflow-y:auto;overscroll-behavior:contain}
 .order-page #coffee-menu{scroll-margin-top:16px}
 @media(max-width:760px){.order-page .order-panel{max-height:none;overflow:visible}}
+
+.order-page .drink-art.menu-photo { position: relative; overflow: hidden; }
+.order-page .order-coffee-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.order-page .menu-photo .drink-label { z-index: 1; background: rgba(255,253,247,.9); padding: 5px 8px; border-radius: 4px; }
