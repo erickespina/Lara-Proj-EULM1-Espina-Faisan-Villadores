@@ -24,11 +24,7 @@
 
         <div class="hero-buttons">
             <a href="#products" class="primary-btn">Explore ↗</a>
-<<<<<<< HEAD
-            <a href="/order" class="secondary-btn">Order Now ☕</a>
-=======
             <a href="/contact" class="secondary-btn">Order Coffee ☕</a>
->>>>>>> 269f297076501d18e9419e0e01c5f32280c39cd8
         </div>
 
     </div>
@@ -55,10 +51,7 @@
         <p>A coffee drink typically made from equal parts espresso and water.</p>
         <div class="product-bottom">
             <span>★★★★★ <small>(4.9)</small></span>
-<<<<<<< HEAD
-=======
             <a href="/contact">More</a>
->>>>>>> 269f297076501d18e9419e0e01c5f32280c39cd8
         </div>
     </div>
 
@@ -68,10 +61,7 @@
         <p>Black coffee is a hot coffee beverage made from freshly brewed coffee beans.</p>
         <div class="product-bottom">
             <span>★★★★★ <small>(4.9)</small></span>
-<<<<<<< HEAD
-=======
             <a href="/contact">More</a>
->>>>>>> 269f297076501d18e9419e0e01c5f32280c39cd8
         </div>
     </div>
 
@@ -81,10 +71,7 @@
         <p>A coffee drink known for its chocolate sweetness and rich flavor.</p>
         <div class="product-bottom">
             <span>★★★★★ <small>(4.9)</small></span>
-<<<<<<< HEAD
-=======
             <a href="/contact">More</a>
->>>>>>> 269f297076501d18e9419e0e01c5f32280c39cd8
         </div>
     </div>
 
@@ -94,10 +81,7 @@
         <p>Breve is a coffee drink made with espresso and steamed half-and-half.</p>
         <div class="product-bottom">
             <span>★★★★★ <small>(4.9)</small></span>
-<<<<<<< HEAD
-=======
             <a href="/contact">More</a>
->>>>>>> 269f297076501d18e9419e0e01c5f32280c39cd8
         </div>
     </div>
 
