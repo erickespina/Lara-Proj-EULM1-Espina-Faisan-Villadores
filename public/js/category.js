@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let visible = 0;
             cards.forEach(function (card) {
-                const show = filter === 'all' || card.dataset.category === filter;
+                const categories = card.dataset.category.split(' ');
+                const show = filter === 'all' || categories.includes(filter);
                 card.classList.toggle('hide', !show);
                 if (show) visible++;
             });
