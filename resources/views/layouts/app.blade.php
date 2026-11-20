@@ -32,13 +32,10 @@
 
     </div>
 
-    <nav class="nav-links">
-        <a href="{{ route('contact') }}">Contact Us</a>
-        <a href="{{ request()->routeIs('order') ? '#coffee-menu' : route('order') . '#coffee-menu' }}">Order Coffee</a>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="#products">Our Product</a>
-        <a href="#category">Category</a>
+    <nav class="nav-links" aria-label="Main navigation">
+        @foreach (['home' => 'Home', 'about' => 'About', 'category' => 'Category', 'explore' => 'Explore', 'order' => 'Order Coffee', 'contact' => 'Contact Us'] as $page => $label)
+            <a href="{{ route($page) }}{{ $page === 'order' ? '#coffee-menu' : '' }}" @if(request()->routeIs($page)) aria-current="page" @endif>{{ $label }}</a>
+        @endforeach
     </nav>
 
 </header>
@@ -61,6 +58,11 @@
                     <p>Have questions or want to order coffee?</p>
                     <a href="/contact">Get in Touch ↗</a>
                 </div>
+                <div class="member-list">
+                    <h3>Group Members</h3>
+                    <p>Erick Espina<br>Joseph Faisan<br>Rodel Villadores</p>
+                </div>
+
             </div>
 
             <div class="footer-bottom">
