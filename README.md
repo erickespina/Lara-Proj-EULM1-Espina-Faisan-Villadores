@@ -1,58 +1,164 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ShizuKafe.brew
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A multi-page Laravel web application for a cafe concept, built with Blade, HTML, CSS, and JavaScript.
 
-## About Laravel
+## Group information
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Group / app name:** ShizuKafe.brew
+- **Section:** EULM1
+- **Members:** Erick Espina, Joseph Faisan, and Rodel Villadores
+- **Group leader:** Erick Espina
+- **Theme:** A cafe website for browsing coffee, matcha, berry, and specialty drinks.
+- **Repository:** https://github.com/erickespina/Lara-Proj-EULM1-Espina-Faisan-Villadores
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Assigned modules and branches
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Member | Assigned modules | Branch |
+| --- | --- | --- |
+| Erick Espina | Project setup and integration, shared layout/navigation, Home carousel, Order Coffee, search bar, Contact Us | `dev-member1-Espina` |
+| Joseph Faisan | Categories and Explore | `dev-member2-Faisan` |
+| Rodel Villadores | About, mission/vision, staff cards; originally Our Product, now consolidated into Categories | `dev-member3-Villadores` |
 
-## Learning Laravel
+Each member works on their own branch. Changes go into `main` through pull requests. Keep meaningful individual commits and the member branches for assessment.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Pages and functionality
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Page | Route | Features |
+| --- | --- | --- |
+| Home | `/` | Cafe introduction, featured drinks, image carousel with arrows, dots, automatic rotation, and Play/Pause |
+| About | `/about` | Background, Read More/Read Less, mission and vision, staff cards |
+| Categories | `/category` | Ten drink products with images, prices, and category filters |
+| Explore | `/explore` | Drink finder, drink of the day, and expandable coffee guide |
+| Order Coffee | `/order-coffee` | Size/temperature selection, cart quantities, totals, and demo confirmation |
+| Contact Us | `/contact` | Name, email, subject, and message fields with client-side validation and success feedback |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+The shared search bar opens Order Coffee from other pages and filters the menu live on the order page. The former `/products` URL redirects to Categories, and `/order` redirects to Order Coffee.
 
-## Agentic Development
+All six pages extend `resources/views/layouts/app.blade.php`. Page assets use `asset()` through `@push('styles')` and `@push('scripts')`; the layout renders the stacks and page content. Page CSS lives in `public/css` and JavaScript in `public/js`.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+**Demo limitations:** Orders are not sent to a business and no payments are collected. The contact form validates in the browser; it does not send email or store messages. The sample contact address is not a real mailbox. Some photos and fonts load from external services, so internet access is needed to display those assets.
 
-```bash
-composer require laravel/boost --dev
+## Screenshots
 
-php artisan boost:install
+Screenshots of the local application are stored in `docs/screenshots`.
+
+### Home
+
+![Home with featured-drink carousel](docs/screenshots/home.jpg)
+
+### About
+
+![About page with story, mission, vision, and staff cards](docs/screenshots/about.jpg)
+
+### Categories
+
+![Categories page with drink products and filters](docs/screenshots/category.jpg)
+
+### Explore
+
+![Explore page with finder, featured drink, and coffee guide](docs/screenshots/explore.jpg)
+
+### Order Coffee
+
+![Order Coffee menu and cart](docs/screenshots/order-coffee.jpg)
+
+### Contact Us
+
+![Contact details and message form](docs/screenshots/contact.jpg)
+
+## Run the project
+
+### Requirements
+
+- PHP 8.3 or newer with the extensions required by Composer, including SQLite/PDO SQLite for the default database.
+- Composer 2.
+- Git to clone the repository, or download and extract the latest main branch ZIP into a separate folder.
+- Laravel Herd can provide the PHP development environment.
+
+The current pages load CSS and JavaScript directly from `public`; an npm/Vite build is not needed for these pages.
+
+### First-time setup
+
+Open a terminal in the folder containing `artisan` and `composer.json`.
+
+If cloning from GitHub:
+
+```sh
+git clone --branch main https://github.com/erickespina/Lara-Proj-EULM1-Espina-Faisan-Villadores.git
+cd Lara-Proj-EULM1-Espina-Faisan-Villadores
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Install the locked PHP dependencies:
 
-## Contributing
+```sh
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Create the local environment file (only if `.env` does not already exist).
 
-## Code of Conduct
+Windows PowerShell or Command Prompt:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```powershell
+copy .env.example .env
+```
 
-## Security Vulnerabilities
+Linux/macOS:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```sh
+cp .env.example .env
+```
 
-## License
+Then initialize the application:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+php artisan key:generate
+php artisan migrate
+php artisan optimize:clear
+php artisan serve
+```
+
+Answer **yes** if migration asks to create the SQLite database. Keep `DB_CONNECTION=sqlite` in `.env` for this setup. Generate the application key only for a new environment; do not regenerate an existing working key unnecessarily.
+
+Open **http://127.0.0.1:8000**. Keep the server terminal open; stop it with **Ctrl+C**.
+
+If port 8000 is occupied:
+
+```sh
+php artisan serve --port=8001
+```
+
+Then open **http://127.0.0.1:8001**.
+
+### Start again later
+
+From the same initialized project folder:
+
+```sh
+php artisan serve
+```
+
+### Update an existing Git clone
+
+Commit or otherwise preserve local work before switching branches or pulling. From a clean working tree:
+
+```sh
+git switch main
+git pull --ff-only origin main
+composer install
+php artisan migrate
+php artisan optimize:clear
+php artisan serve
+```
+
+Do not paste a downloaded ZIP over an existing working copy. A ZIP download does not include Git history; use a clone to work with branches and pull requests.
+
+### Troubleshooting
+
+- **PHP or Composer not recognized:** open a new terminal after installing/enabling them through your development environment.
+- **Missing vendor/autoload.php:** run `composer install`.
+- **Missing application key:** for a new setup, create `.env` and run `php artisan key:generate`.
+- **Database or sessions table missing:** verify the SQLite configuration and run `php artisan migrate`.
+- **Old page or style still showing:** run `php artisan optimize:clear`, then hard-refresh the browser with Ctrl+F5.
+- **Wrong version running:** check the terminal's current folder and the port printed by `php artisan serve`.
+
+Never commit `.env`, `vendor`, or local database contents. Keep the existing ignore rules. Every device installs its own dependencies and creates its own local settings.
