@@ -9,103 +9,97 @@
 @section('content')
 <section class="explore-hero">
     <p class="subtitle">DISCOVER</p>
-    <h1>Explore Our <span>Coffee</span></h1>
-    <p class="explore-description">Tap a drink to see what makes it special.</p>
+    <h1>Explore <span>ShizuKafe</span></h1>
+    <p class="explore-description">Find your perfect drink, meet today's pick, and learn a little about coffee.</p>
 </section>
 
-<section class="explore-list">
+<!-- 1. FIND YOUR DRINK -->
+<section class="explore-section">
+    <h2>Find Your <span>Drink</span></h2>
 
-    <article class="feature">
-        <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=900" alt="Americano">
-        <div class="feature-text">
-            <span class="tag">Hot · Espresso</span>
-            <h2>Americano</h2>
-            <p>A coffee drink typically made from equal parts espresso and water. Clean, bold, and easy to sip.</p>
-            <p class="best-for">Best for: a quick, strong pick-me-up.</p>
-            <div class="feature-bottom">
-                <span class="price">₱89</span>
-                <button type="button" class="details-btn"
-                    data-title="Americano"
-                    data-img="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=900"
-                    data-desc="A coffee drink typically made from equal parts espresso and water. Clean, bold, and easy to sip."
-                    data-notes="Best enjoyed hot, any time of day.">
-                    Details
-                </button>
-            </div>
+    <div class="finder-box">
+        <p class="q-label">1. What flavor are you in the mood for?</p>
+        <div class="option-row" data-question="flavor">
+            <button type="button" class="option-btn" data-value="strong">Strong &amp; bold</button>
+            <button type="button" class="option-btn" data-value="sweet">Sweet &amp; creamy</button>
+            <button type="button" class="option-btn" data-value="fruity">Fruity</button>
+            <button type="button" class="option-btn" data-value="matcha">Matcha</button>
         </div>
-    </article>
 
-    <article class="feature reverse">
-        <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=900" alt="Black Coffee">
-        <div class="feature-text">
-            <span class="tag">Hot · Brewed</span>
-            <h2>Black Coffee</h2>
-            <p>Freshly brewed coffee made from carefully selected coffee beans, with nothing added.</p>
-            <p class="best-for">Best for: a strong morning start.</p>
-            <div class="feature-bottom">
-                <span class="price">₱79</span>
-                <button type="button" class="details-btn"
-                    data-title="Black Coffee"
-                    data-img="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=900"
-                    data-desc="A hot coffee beverage made from freshly brewed coffee beans, served without milk or sugar."
-                    data-notes="Great for a strong morning start.">
-                    Details
-                </button>
-            </div>
+        <p class="q-label">2. What's your budget?</p>
+        <div class="option-row" data-question="budget">
+            <button type="button" class="option-btn" data-value="89">Up to ₱89</button>
+            <button type="button" class="option-btn" data-value="99">Up to ₱99</button>
         </div>
-    </article>
 
-    <article class="feature">
-        <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=900" alt="Mocha">
-        <div class="feature-text">
-            <span class="tag">Hot · Chocolate</span>
-            <h2>Mocha</h2>
-            <p>A coffee drink known for its chocolate sweetness and rich flavor.</p>
-            <p class="best-for">Best for: anyone with a sweet tooth.</p>
-            <div class="feature-bottom">
-                <span class="price">₱99</span>
-                <button type="button" class="details-btn"
-                    data-title="Mocha"
-                    data-img="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=900"
-                    data-desc="A coffee drink known for its chocolate sweetness and rich flavor."
-                    data-notes="A treat for anyone with a sweet tooth.">
-                    Details
-                </button>
-            </div>
-        </div>
-    </article>
-
-    <article class="feature reverse">
-        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900" alt="Breve">
-        <div class="feature-text">
-            <span class="tag">Hot · Creamy</span>
-            <h2>Breve</h2>
-            <p>A coffee drink made with espresso and steamed half-and-half, creamier than a latte.</p>
-            <p class="best-for">Best for: a rich, smooth afternoon cup.</p>
-            <div class="feature-bottom">
-                <span class="price">₱99</span>
-                <button type="button" class="details-btn"
-                    data-title="Breve"
-                    data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900"
-                    data-desc="A coffee drink made with espresso and steamed half-and-half, creamier than a latte."
-                    data-notes="Rich and smooth.">
-                    Details
-                </button>
-            </div>
-        </div>
-    </article>
-
-</section>
-
-<div class="modal" id="drinkModal" aria-hidden="true">
-    <div class="modal-box">
-        <button type="button" class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-        <img id="modalImg" src="" alt="">
-        <h2 id="modalTitle"></h2>
-        <p id="modalDesc"></p>
-        <p class="modal-notes" id="modalNotes"></p>
+        <button type="button" id="findBtn" class="primary-btn">Find my drink</button>
+        <p id="finderError" class="finder-error" hidden>Please answer both questions first.</p>
     </div>
-</div>
+
+    <div class="drink-result" id="finderResult" hidden>
+        <img class="dr-img" src="" alt="">
+        <div class="dr-text">
+            <span class="tag dr-tag"></span>
+            <h3 class="dr-name"></h3>
+            <p class="dr-desc"></p>
+            <span class="price dr-price"></span>
+        </div>
+    </div>
+</section>
+
+<!-- 2. DRINK OF THE DAY -->
+<section class="explore-section">
+    <h2>Drink of the <span>Day</span></h2>
+
+    <div class="drink-result" id="dayResult">
+        <img class="dr-img" src="" alt="">
+        <div class="dr-text">
+            <span class="tag dr-tag"></span>
+            <h3 class="dr-name"></h3>
+            <p class="dr-desc"></p>
+            <span class="price dr-price"></span>
+        </div>
+    </div>
+
+    <div class="center-row">
+        <button type="button" id="surpriseBtn" class="secondary-btn">Surprise me 🎲</button>
+    </div>
+</section>
+
+<!-- 3. COFFEE GUIDE -->
+<section class="explore-section">
+    <h2>Coffee <span>Guide</span></h2>
+
+    <div class="guide">
+        <div class="guide-item">
+            <button type="button" class="guide-q" aria-expanded="false">Espresso vs. brewed coffee</button>
+            <div class="guide-a" hidden>
+                Espresso is made by forcing hot water through finely ground coffee under pressure, which gives a small, concentrated shot. Brewed coffee lets water pass through coarser grounds more slowly, giving a larger and milder cup.
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <button type="button" class="guide-q" aria-expanded="false">What's an Americano? What's a Breve?</button>
+            <div class="guide-a" hidden>
+                An Americano is espresso with hot water, so it tastes bold but lighter than a straight shot. A Breve is espresso with steamed half-and-half, which makes it richer and creamier than a latte.
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <button type="button" class="guide-q" aria-expanded="false">What is matcha?</button>
+            <div class="guide-a" hidden>
+                Matcha is finely ground green tea powder that is whisked into a drink. It tastes earthy and a little sweet, and it pairs well with milk or berry flavors.
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <button type="button" class="guide-q" aria-expanded="false">How do I choose a drink?</button>
+            <div class="guide-a" hidden>
+                Want a strong kick? Try Black Coffee or Americano. Want something sweet and creamy? Go for Mocha or Iced Caramel Macchiato. Prefer something fruity or green? Try Donya Berry or Don Matchatos. Not sure? Use the Find Your Drink quiz above.
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('scripts')
